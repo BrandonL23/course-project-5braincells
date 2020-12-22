@@ -173,7 +173,7 @@ class SignUpState extends State<SignUp> {
       resizeToAvoidBottomPadding: false,
       appBar: AppBar(
           title: Text("Service App"),
-          backgroundColor: Colors.blueAccent,
+          backgroundColor: Colors.blue,
           centerTitle: true),
       body: Container(
         margin: EdgeInsets.all(20),

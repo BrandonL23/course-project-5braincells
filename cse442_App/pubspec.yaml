@@ -21,8 +21,9 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-  flappy_search_bar: 1.7.2
+  flappy_search_bar: ^1.7.2
   google_maps_flutter: ^1.0.3
+  animated_text_kit: ^3.1.0
   flutter:
     sdk: flutter
 

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import '../home screen/home_screen.dart';
-import '../main.dart';
 import 'login_page.dart';
 import 'signup.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -14,13 +13,34 @@ class Home extends StatelessWidget {
           centerTitle: true),
       body: Column(
         children: <Widget>[
-          Text(
-            "Welcome to our app!",
-            style: TextStyle(
-                fontSize: 38,
-                color: Colors.blue,
-                fontWeight: FontWeight.bold,
-                height: 3.0),
+          Padding(padding: EdgeInsetsDirectional.only(top: 30)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                "Create",
+                style: TextStyle(
+                    fontSize: 45,
+                    color: Colors.blue,
+                    fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: 100,
+                width: 200,
+                child: RotateAnimatedTextKit(
+                  text: ["Listings", "Services", " Requests"],
+                  transitionHeight: 100,
+                  textStyle: TextStyle(
+                      fontStyle: FontStyle.italic,
+                      fontFamily: "Horizon",
+                      fontSize: 45,
+                      color: Colors.blue,
+                      fontWeight: FontWeight.bold),
+                  repeatForever: true,
+                  textAlign: TextAlign.start,
+                ),
+              ),
+            ],
           ),
           new Padding(
             padding: const EdgeInsets.all(40.0),

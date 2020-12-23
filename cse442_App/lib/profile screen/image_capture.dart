@@ -53,6 +53,11 @@ class _ImageCaptureState extends State<ImageCapture> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.blue,
+          title: Text("Change Profile Picture"),
+          centerTitle: true,
+        ),
         bottomNavigationBar: BottomAppBar(
             child: Row(
           children: <Widget>[

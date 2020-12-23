@@ -133,7 +133,6 @@ class ProfileScreenState extends State<ProfileScreen> {
       tabs.add(Container(
           child: Text(
         name,
-        //textAlign: TextAlign.center,
         style: TextStyle(
             color: Colors.black87, fontSize: 15, fontWeight: FontWeight.bold),
       )));
@@ -145,14 +144,12 @@ class ProfileScreenState extends State<ProfileScreen> {
     List<Widget> bioTabs = new List();
     for (String bio in bios) {
       bioTabs.add(Container(
-              padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
-              child: Text(
-                bio,
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.black, fontSize: 18),
-              ))
-          //Padding(padding: EdgeInsets.all(10));
-          );
+          padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+          child: Text(
+            bio,
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.black, fontSize: 18),
+          )));
     }
     return bioTabs;
   }
@@ -199,47 +196,42 @@ class ProfileScreenState extends State<ProfileScreen> {
                                   "https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-04.jpg"),
                               fit: BoxFit.cover)),
                     ),
-//                     Padding(
-//                         padding: EdgeInsets.fromLTRB(240, 60, 0, 0),
-//                         child: IconButton(
-//                           icon: Icon(Icons.camera_alt),
-//                           onPressed: () {},
-//                         )),
-                    RaisedButton(
-                      color: Colors.lightBlueAccent,
-                      child: Text(
-                        "Change Image",
-                        style: TextStyle(fontSize: 20, color: Colors.white),
-                      ),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                          side:
-                              BorderSide(color: Colors.lightBlue, width: 2.0)),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    ImageCapture(user: user)));
+                    // Widget used to view/change Profile Picture
+                    InkWell(
+                      onTap: () {
+                        if (sameUser) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      ImageCapture(user: user)));
+                        }
                       },
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 50, left: 135),
-                      height: 120,
-                      width: 120,
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                              image: NetworkImage(profilePic),
-                              fit: BoxFit.cover),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.3),
-                              blurRadius: 30,
-                              spreadRadius: 3,
-                              offset: Offset(10, 10),
-                            )
-                          ]),
+                      // Container holding profile picture
+                      child: Padding(
+                        padding: const EdgeInsetsDirectional.only(top: 50),
+                        child: Align(
+                          alignment: Alignment.topCenter,
+                          child: Container(
+                            // margin: EdgeInsets.only(top: 50, left: 135),
+                            height: 120,
+                            width: 120,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                    image: NetworkImage(profilePic),
+                                    fit: BoxFit.cover),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.3),
+                                    blurRadius: 30,
+                                    spreadRadius: 3,
+                                    offset: Offset(5, 5),
+                                  )
+                                ]),
+                          ),
+                        ),
+                      ),
                     )
                   ],
                 ),
@@ -282,7 +274,6 @@ class ProfileScreenState extends State<ProfileScreen> {
                   child: new AppBar(
                     title: TabBar(
                       tabs: getTabs(tabNames),
-                      //isScrollable: true,
                       indicator: UnderlineTabIndicator(
                         insets: EdgeInsets.all(0.1),
                       ),

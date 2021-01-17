@@ -5,4 +5,4 @@ Our app gives our community a way to provide or request services from others. If
 
 ## Demo
 ### Login/Sign Up
-![Login/Sign up Screen](demo/"rotating display".gif)
+![Login/Sign up Screen](demo/rotating_display.gif)
